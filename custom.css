@@ -1,0 +1,98 @@
+* {  
+    font-smoothing: antialiased;
+    margin: 0; padding: 0;
+}
+
+.gallery { 
+    position: relative; 
+    width: 700px; height: 306px; 
+    margin: auto; 
+    overflow: hidden; 
+    list-style: none;
+}
+.gallery img { 
+    display: block; 
+    float: left; 
+}
+.gallery ul {
+    list-style: none;
+}
+.gallery ul li.each { 
+    position: relative; 
+    float: left;
+    /*transition: width  .8s;*/ //remove comment to add transition effect
+}
+.gallery ul li.each, .gallery ul li.each img { 
+    height: 0px; 
+}
+.gallery ul li.each img { 
+    opacity: 1; 
+    /*transition: width  .4s;*/ //remove comment to add transition effe
+}
+.gallery ul li.each.active, .gallery ul li.each.active img { 
+    height: 306px; 
+}
+.gallery ul li.each.active img { 
+    //opacity: 1; 
+    display:block;
+}
+.gallery .caption { 
+    position: absolute;
+    bottom: 0; 
+    left: 20px; right: 20px;
+    text-transform: uppercase;
+}
+
+.gallery .caption h2, .gallery .caption p {
+    background: #fff000; 
+    padding: 7px;
+    box-shadow: 0 0 20px #000;
+}
+.gallery .caption h2 {
+    font: 24px "Lato", sans-serif;
+    float: left;
+}
+.gallery .caption p {
+    font: 18px "Lato", sans-serif;
+    float: left;
+    clear: both;
+}
+
+.direction { 
+    position: absolute;
+    top: 50%;
+    margin-top: -74px;
+    right: -100px;
+    width: 158px;
+    height: 158px;
+    display: block;
+    transform: rotate(45deg);
+    z-index: 9999;
+}
+.directionp { 
+    position: absolute;
+    top: 50%;
+    margin-top: -74px;
+    left: 10px;
+    width: 168px;
+    height: 168px;
+    display: block;
+    transform: rotate(45deg);
+    z-index: 9999;
+}
+.direction .next {
+    position: absolute;
+    top: 90px;
+    color: #ededed;
+    font: 25px "Lato", sans-serif;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+.directionp .prev {
+    position: absolute;
+    top: 90px;
+    color: #ededed;
+    font: 25px "Lato", sans-serif;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
