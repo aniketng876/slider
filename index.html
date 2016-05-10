@@ -1,0 +1,43 @@
+<html>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="custom.css">
+    <script>
+        $(function () {
+            $slideshow = $(".gallery ul");  // get all images in UL
+            $slideactive = $slideshow.find("li.each").first().addClass('active').show();    // Add 'active' class to first image
+
+            $(".direction .next").click(function () {
+                $slideactive = $slideshow.find("li.active").next(); // get next image of currently active image
+                if (!$slideactive.size())   // check size of next image
+                    $slideactive = $slideshow.find("li.each").first(); // if next image is null set next image to first image
+                $slideshow.find("li.active").removeClass("active");     // remove 'active' class of current image
+                $slideactive.addClass("active");    // set 'active' class to next image
+            });
+
+            $(".directionp .prev").click(function () {
+                $slideactive = $slideshow.find("li.active").prev(); // get previous image of currently active image
+                if (!$slideactive.size())   // check previous of next image
+                    $slideactive = $slideshow.find("li.each").last();   // if next image is null set previous image to last image
+                $slideshow.find("li.active").removeClass("active"); // remove 'active' class of current image
+                $slideactive.addClass("active");    // set 'active' class to previous image
+            });
+
+        });
+    </script>
+    <h3 style="margin-left: 43%;margin-bottom: 15px;margin-top: 15px">example JavaScript Image Slider</h3>
+    <div class="gallery">
+        <div class="directionp">
+            <span class="prev">Prev</span>
+        </div>
+        <ul>
+            <li class="each">                <img src="images/image1.jpg" alt="Lorem 1" />            </li>
+            <li class="each">                <img src="images/image2.jpg" alt="Lorem 2" />            </li>
+            <li class="each">                <img src="images/image3.jpg" alt="Lorem 3" />            </li>
+            <li class="each">                <img src="images/image4.jpg" alt="Lorem 4" />            </li>
+            <li class="each">                <img src="images/image5.jpg" alt="Lorem 5" />            </li>
+        </ul>
+        <div class="direction">
+            <span class="next">Next</span>
+        </div>
+    </div>
+</html>
